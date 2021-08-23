@@ -1,0 +1,88 @@
+:root {
+    --bg-button: #f0f0f0;
+    --bg-border: solid 1px #888;
+}
+
+* {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
+}
+
+.calculator {
+    height: 450px;
+    width: 335px;
+    border-radius: 5px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 1fr 60px 60px 60px 60px 60px;
+}
+
+.display {
+    grid-column: span 4;
+    background-color: #0004;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 10px;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.display .previous-op {
+    font-size: 1.4rem;
+}
+
+.display .current-op {
+    font-size: 2rem;
+}
+
+.btn {
+    font-size: 1.4rem;
+    background-color: var(--bg-button);
+    border: none;
+    border-right: var(--bg-border);
+    border-bottom: var(--bg-border);
+    outline: none;
+}
+
+.btn:active {
+    opacity: 0.7;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn.double {
+    grid-column: span 2;
+    background-color: royalblue;
+}
+
+.btn.operation {
+    background-color: rgb(0, 0, 0, 0.5);
+    color: #f0f0f0;
+}
+
+.btn.clear {
+    background-color: rgb(209, 0, 0);
+}
